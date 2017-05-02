@@ -214,3 +214,45 @@ video {
     float: right;
     height: 500px;
 }
+
+
+/*
+    ===============
+    WATCH CONTENT
+    ===============
+*/
+
+.watch-content {
+    background-color: #fff;
+    position: relative;
+    top: 60px;
+    height: 480px;
+}
+
+.content {
+    color: #333447;
+    width: 36.7%;
+    padding: 30px 50px;
+}
+
+.content h1:first-child {
+    font-weight: 600;
+    font-size: 12px;
+    margin: 0;
+}
+
+.content h1:nth-child(2) {
+    margin: 0 0 20px 0;
+}
+
+.content p {
+    width: 365px;
+}
+
+.left {
+    float: left
+}
+
+.right {
+    float: right;
+}
