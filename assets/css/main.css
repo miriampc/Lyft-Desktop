@@ -213,17 +213,15 @@ video {
 }
 
 .alert {
-    background-color: red;
-    font-size: 18px;
-    color: #fff;
-    text-align: center;
-    border-radius: 50%;
+    background-image: url(../images/error.png);
+    background-repeat: no-repeat;
+    background-size: 25px;
     width: 25px;
     height: 25px;
+    display: inline-block;
     display: none;
     position: absolute;
     right: 0;
-    padding: 1px;
 }
 
 .phone-alert {    
