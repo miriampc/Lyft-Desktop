@@ -8,10 +8,9 @@ body {
     box-sizing: border-box;
 }
 
-.main-content {
-    background-image: linear-gradient(#681b81, #271c3a);
+.wrapper {
     width: 100%;
-    height: 1500px;
+    height: 1150px;
 }
 
 
@@ -31,6 +30,12 @@ nav {
     width: 88%;
     height: 50px;
     margin: auto;
+}
+
+video {
+    position: absolute;
+    width: 1349px;
+    top: -110px;
 }
 
 .logo {
@@ -69,6 +74,10 @@ nav {
     padding: 10px 15px;
 }
 
+.links:last-child:hover {
+    color: #fff;
+}
+
 
 /*
     ===============
@@ -83,6 +92,7 @@ nav {
     top: 60px;
     width: 560px;
     padding: 55px;
+    z-index: 5;
 }
 
 .form h1 {
@@ -151,4 +161,19 @@ nav {
 .bot-form a:hover {
     color: #df06ac;
     text-decoration: underline;
+}
+
+
+/*
+    ===============
+    MAIN CONTENT
+    ===============
+*/
+
+.main-content {
+    background-image: linear-gradient(#681b81, #271c3a);
+    position: relative;
+    top: 539px;
+    height: 500px;
+    box-shadow: 0 0 200px 180px #681b81;
 }
