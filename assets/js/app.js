@@ -44,3 +44,45 @@ document.getElementById("phone-number").addEventListener("click", function () {
     document.getElementById("mid-form").style.display = "block";
     document.getElementById("video").style.top = "0";
 });
+
+function validation() {
+    "use strict";
+    var homeNumber = document.getElementById("phone-number"),
+        homeRegex = /[0-9]{7}/,
+
+        name = document.getElementById('name'),
+        city = document.getElementById('city'),
+        firstChar = /[A-Z]{1}[a-z]+/,
+
+        email = document.getElementById("email"),
+        emailRegex = /\S+@\S+\.\S+/;
+
+    //Home number validation
+    if (homeRegex.test(homeNumber.value) === false) {
+        document.getElementById("error1").style.display = "inline-block";
+    } else {
+        document.getElementById("error1").style.display = "none";
+    }
+
+    //Name & city validation
+    if (firstChar.test(name.value) === false) {
+        document.getElementById("error2").style.display = "inline-block";
+    } else {
+        document.getElementById("error2").style.display = "none";
+    }
+
+    if (firstChar.test(city.value) === false) {
+        document.getElementById("error4").style.display = "inline-block";
+    } else {
+        document.getElementById("error4").style.display = "none";
+    }
+
+    //Email validation
+    if (emailRegex.test(email.value) === false) {
+        document.getElementById("error3").style.display = "inline-block";
+    } else {
+        document.getElementById("error3").style.display = "none";
+    }
+}
+
+document.getElementById("sign-up-btn").addEventListener('click', validation);
