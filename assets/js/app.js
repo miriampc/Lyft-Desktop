@@ -38,3 +38,9 @@ window.addEventListener("scroll", function () {
     }
     lastScrollTop = currentScroll;
 }, false);
+
+document.getElementById("phone-number").addEventListener("click", function () {
+    "use strict";
+    document.getElementById("mid-form").style.display = "block";
+    document.getElementById("video").style.top = "0";
+});

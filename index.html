@@ -14,7 +14,7 @@
 
 <body>
     <div class="wrapper">
-        <video autoplay loop>
+        <video id="video" autoplay loop>
             <source src="assets/images/hero-video.mp4">
         </video>
         <header id="nav-header">
@@ -37,7 +37,13 @@
                     <div class="top-form">
                         <input id="phone-number" type="text" class="sign-up-data" placeholder="Phone number">
                     </div>
-                    <div class="mid-form"></div>
+                    <div id="mid-form" class="mid-form">
+                        <input class="sign-up-data" placeholder="Name">
+                        <br>
+                        <input class="sign-up-data" placeholder="Email">
+                        <br>
+                        <input class="sign-up-data" placeholder="City">
+                    </div>
                     <div class="bot-form">
                         <button id="sign-up-btn">Become a driver</button>
                         <a id="sign-up-link" href="#">Sign Up to Ride</a>
