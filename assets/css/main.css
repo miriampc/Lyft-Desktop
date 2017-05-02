@@ -173,7 +173,7 @@ video {
 .main-content {
     background-image: linear-gradient(#681b81, #271c3a);
     position: relative;
-    top: 539px;
+    top: 425px;
     height: 500px;
-    box-shadow: 0 0 200px 180px #681b81;
+    box-shadow: 0 0 100px 50px #681b81;
 }
