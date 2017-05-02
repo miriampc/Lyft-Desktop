@@ -111,6 +111,19 @@ video {
     color: #737481;
 }
 
+#link5 {
+    color: #ff00bf;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #ff00bf;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 10px 15px;
+}
+
 
 /*
     ===============

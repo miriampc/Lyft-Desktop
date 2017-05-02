@@ -18,6 +18,7 @@ window.addEventListener("scroll", function () {
         document.getElementById("link3").classList.add("links-down");
         document.getElementById("link4").classList.remove("links");
         document.getElementById("link4").classList.add("links-down");
+        document.getElementById("link5").style.display = "inline-block";
     } else {
         if (currentScroll <= 100) {
             document.getElementById("nav-header").classList.remove("header-white");
@@ -32,6 +33,7 @@ window.addEventListener("scroll", function () {
             document.getElementById("link3").classList.remove("links-down");
             document.getElementById("link4").classList.add("links");
             document.getElementById("link4").classList.remove("links-down");
+            document.getElementById("link5").style.display = "none";
         }
     }
     lastScrollTop = currentScroll;
