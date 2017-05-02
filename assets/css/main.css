@@ -41,7 +41,7 @@ video {
     top: -110px;
 }
 
-.logo {
+#logo {
     background-image: url(../images/logo-white.png);
     background-repeat: no-repeat;
     background-size: 65px;
@@ -83,6 +83,32 @@ video {
 
 .header-white {
     background-color: #fff;
+}
+
+.links-down {
+    font-size: 19px;
+    color: #737481;
+    text-decoration: none;
+    margin-right: 45px;
+}
+
+.links-down:hover {
+    color: #df06ac;
+}
+
+.links-down:nth-child(2) {
+    margin-right: 15px;
+}
+
+.links-down:last-child {
+    border-radius: 8px;
+    border: 1px solid #d8dce6;
+    margin: 0;
+    padding: 10px 15px;
+}
+
+.links-down:last-child:hover {
+    color: #737481;
 }
 
 

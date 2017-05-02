@@ -6,16 +6,32 @@ window.addEventListener("scroll", function () {
     "use strict";
     var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
     if (currentScroll > lastScrollTop) {
-        document.getElementById('nav-background').style.display = "none";
+        document.getElementById("logo").style.backgroundImage = "url(assets/images/logo-pink.png)";
+        document.getElementById("logo").style.backgroundRepeat = "no-repeat";
+        document.getElementById("logo").style.backgroundSize = "65px";
         document.getElementById("nav-header").classList.add("header-white");
-        document.getElementById("nav-header").style.opacity = 0;
+        document.getElementById("link1").classList.remove("links");
+        document.getElementById("link1").classList.add("links-down");
+        document.getElementById("link2").classList.remove("links");
+        document.getElementById("link2").classList.add("links-down");
+        document.getElementById("link3").classList.remove("links");
+        document.getElementById("link3").classList.add("links-down");
+        document.getElementById("link4").classList.remove("links");
+        document.getElementById("link4").classList.add("links-down");
     } else {
-        document.getElementById('nav-background').style.display = "table";
-        document.getElementById("nav-background").classList.add("header-in");
-        document.getElementById("nav-header").classList.add("solid");
-        document.getElementById("nav-header").style.opacity = 1;
-        if (currentScroll <= 3) {
-            document.getElementById("nav-header").classList.remove("header-in");
+        if (currentScroll <= 2) {
+            document.getElementById("nav-header").classList.remove("header-white");
+            document.getElementById("logo").style.backgroundImage = "url(assets/images/logo-white.png)";
+            document.getElementById("logo").style.backgroundRepeat = "no-repeat";
+            document.getElementById("logo").style.backgroundSize = "65px";
+            document.getElementById("link1").classList.add("links");
+            document.getElementById("link1").classList.remove("links-down");
+            document.getElementById("link2").classList.add("links");
+            document.getElementById("link2").classList.remove("links-down");
+            document.getElementById("link3").classList.add("links");
+            document.getElementById("link3").classList.remove("links-down");
+            document.getElementById("link4").classList.add("links");
+            document.getElementById("link4").classList.remove("links-down");
         }
     }
     lastScrollTop = currentScroll;
