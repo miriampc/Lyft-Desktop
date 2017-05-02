@@ -312,6 +312,21 @@ footer a:hover {
     margin-right: 150px;
 }
 
+.download {
+    float: right;
+    margin-right: 200px;
+}
+
+.download img {
+    display: block;
+    height: 40px;
+    margin: 40px;
+}
+
+.download img:last-child {
+    height: 50px;
+}
+
 .social-media {
     text-align: center;
     border-bottom: 1px solid #fff;
