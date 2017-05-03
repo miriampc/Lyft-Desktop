@@ -64,14 +64,14 @@ video {
     margin-right: 15px;
 }
 
-.links:last-child {
+.links:nth-child(4) {
     border-radius: 8px;
     border: 1px solid #fff;
     margin: 0;
     padding: 10px 15px;
 }
 
-.links:last-child:hover {
+.links:nth-child(4):hover {
     color: #fff;
 }
 
@@ -94,15 +94,11 @@ video {
     margin-right: 15px;
 }
 
-.links-down:last-child {
+.links-down:nth-child(4) {    
     border-radius: 8px;
-    border: 1px solid #d8dce6;
+    border: 1px solid #eeeff4;
     margin: 0;
     padding: 10px 15px;
-}
-
-.links-down:last-child:hover {
-    color: #737481;
 }
 
 #link5 {
@@ -113,9 +109,8 @@ video {
     display: none;
     position: absolute;
     top: 0;
-    right: 0;
-    margin: 0;
-    padding: 10px 15px;
+    right: -30px;
+    padding: 11px 15px;
 }
 
 
