@@ -10,6 +10,7 @@ window.addEventListener("scroll", function () {
         document.getElementById("logo").style.backgroundRepeat = "no-repeat";
         document.getElementById("logo").style.backgroundSize = "65px";
         document.getElementById("nav-header").classList.add("header-white");
+        document.getElementById("nav-header").classList.remove("gradient");
         document.getElementById("link1").classList.remove("links");
         document.getElementById("link1").classList.add("links-down");
         document.getElementById("link2").classList.remove("links");
@@ -22,6 +23,7 @@ window.addEventListener("scroll", function () {
     } else {
         if (currentScroll <= 100) {
             document.getElementById("nav-header").classList.remove("header-white");
+            document.getElementById("nav-header").classList.add("gradient");
             document.getElementById("logo").style.backgroundImage = "url(assets/images/logo-white.png)";
             document.getElementById("logo").style.backgroundRepeat = "no-repeat";
             document.getElementById("logo").style.backgroundSize = "65px";
