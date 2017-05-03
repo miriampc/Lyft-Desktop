@@ -21,4 +21,4 @@ Proyecto final | Sprint 3
 |---|---|---|---|
 [Annia J. Flores](https://github.com/itsandromeda) | [Fiorella Cisneros](https://github.com/Fiorellacr24) | [Miriam Peralta](https://github.com/miriampc) | [Rosario Félix](https://github.com/RosarioFelix)
 
-Mira cómo quedó haciendo click [aquí](https://itsandromeda.github.io/Lyft-Desktop/).
+Mira cómo quedó haciendo click [aquí](https://miriampc.github.io/Lyft-Desktop/).
