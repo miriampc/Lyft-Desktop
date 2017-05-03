@@ -8,11 +8,6 @@ body {
     box-sizing: border-box;
 }
 
-.wrapper {
-    width: 100%;
-    height: 3000px;
-}
-
 
 /*
     ===============
@@ -51,7 +46,6 @@ video {
 }
 
 .links-container {
-    float: right;
     margin: 10px 90px 0 0;
 }
 
@@ -133,7 +127,6 @@ video {
 
 .form {
     background-color: #fff;
-    float: right;
     position: relative;
     top: 110px;
     width: 560px;
@@ -224,19 +217,19 @@ video {
     right: 0;
 }
 
-.phone-alert {    
+.phone-alert {
     top: -2px;
 }
 
-.name-alert {    
+.name-alert {
     top: 63px;
 }
 
-.email-alert {    
+.email-alert {
     top: 128px;
 }
 
-.city-alert {    
+.city-alert {
     top: 193px;
 }
 
@@ -263,7 +256,6 @@ video {
     display: block;
     width: 450px;
     margin: 0;
-    float: left;
 }
 
 .info div {
@@ -288,7 +280,6 @@ video {
 }
 
 .main-content img {
-    float: right;
     height: 500px;
 }
 
@@ -361,7 +352,6 @@ footer a:hover {
 }
 
 .footer-main {
-    float: left;
     width: 750px;
     margin: 10px 0 60px 100px;
 }
@@ -390,7 +380,6 @@ footer a:hover {
 }
 
 .download {
-    float: right;
     margin-right: 200px;
 }
 
