@@ -35,55 +35,29 @@ var homeRegex = /[0-9]{7}/,
     firstChar = /[^a-zá-ú-0-9@.,:/=\s]+([a-zá-ú ]{2,})/,
     emailRegex = /([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})/;
 
+var arrayRegex=[{regex:/[0-9]{7}/,title:"Debe ingresar 6 o 7 digitos"},
+                {regex:/[^a-zá-ú-0-9@.,:/=\s]+([a-zá-ú ]{2,})/,title:"La primera letra debe ser mayuscula"},
+                {regex:/([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})/,title:"Ex: example@email.com"},
+                {regex:/[^a-zá-ú-0-9@.,:/=\s]+([a-zá-ú ]{2,})/,title:"La primera letra debe ser mayuscula"}];
+
 var input=document.getElementsByClassName('sign-up-data');
 
 for (var i = 0; i < input.length; i++) {
     input[i].addEventListener('blur',validateForm);
 }
 
-
 function validateForm(){
-  if(input[0].value.trim()==""){
-    input[0].classList.add("alert");
-    return false;
-  }else if(!(homeRegex.test(input[0].value))){
-    input[0].classList.add("alert");
-    return false;
-  }else {
-    input[0].classList.remove("alert");
-  }
-
-  if(input[1].value==""){
-    input[1].classList.add("alert");
-    return false;
-  }else if(!firstChar.test(input[1].value)){
-    input[1].classList.add("alert");
-    return false;
-  }else{
-    input[1].classList.remove("alert");
-  }
-
-  if(input[2].value==""){
-    input[2].classList.add("alert");
-    return false;
-  }else if(!emailRegex.test(input[2].value)){
-    input[2].classList.add("alert");
-    return false;
-  }else{
-    input[2].classList.remove("alert");
-  }
-
-  if(input[3].value==""){
-    input[3].classList.add("alert");
-    return false;
-  }else if(!firstChar.test(input[3].value)){
-    input[3].classList.add("alert");
-    return false;
-  }else{
-    input[3].classList.remove("alert");
-  }
-
-
+  arrayRegex.forEach(function(e,i){
+    if(input[i].value.trim()==""){
+      input[i].classList.add("alert");
+      return false;
+    }else if(!(e.regex.test(input[i].value))){
+      input[i].classList.add("alert");
+      return false;
+    }else {
+      input[i].classList.remove("alert");
+    }
+  });
 }
 
 document.getElementById("sign-up-btn").addEventListener('click', validateForm);
