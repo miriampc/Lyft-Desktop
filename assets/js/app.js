@@ -31,10 +31,6 @@ document.getElementById("phone-number").addEventListener("click", function () {
     document.getElementById("video").style.top = "0";
 });
 
-var homeRegex = /[0-9]{7}/,
-    firstChar = /[^a-zá-ú-0-9@.,:/=\s]+([a-zá-ú ]{2,})/,
-    emailRegex = /([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})/;
-
 var arrayRegex=[{regex:/[0-9]{7}/,title:"Debe ingresar 6 o 7 digitos"},
                 {regex:/[^a-zá-ú-0-9@.,:/=\s]+([a-zá-ú ]{2,})/,title:"La primera letra debe ser mayuscula"},
                 {regex:/([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})/,title:"Ex: example@email.com"},
