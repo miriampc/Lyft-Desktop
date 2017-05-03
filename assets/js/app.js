@@ -1,41 +1,27 @@
 /*global window, document*/
-
+var navLink=document.getElementsByClassName('nav-link');
 var lastScrollTop = 0;
 
 window.addEventListener("scroll", function () {
-    "use strict";
     var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-    if (currentScroll > 70) {
-        document.getElementById("logo").style.backgroundImage = "url(assets/images/logo-pink.png)";
-        document.getElementById("logo").style.backgroundRepeat = "no-repeat";
-        document.getElementById("logo").style.backgroundSize = "65px";
-        document.getElementById("nav-header").classList.add("header-white");
-        document.getElementById("link1").classList.remove("links");
-        document.getElementById("link1").classList.add("links-down");
-        document.getElementById("link2").classList.remove("links");
-        document.getElementById("link2").classList.add("links-down");
-        document.getElementById("link3").classList.remove("links");
-        document.getElementById("link3").classList.add("links-down");
-        document.getElementById("link4").classList.remove("links");
-        document.getElementById("link4").classList.add("links-down");
-        document.getElementById("link5").style.display = "inline-block";
-    } else {
-        if (currentScroll <= 100) {
-            document.getElementById("nav-header").classList.remove("header-white");
-            document.getElementById("logo").style.backgroundImage = "url(assets/images/logo-white.png)";
-            document.getElementById("logo").style.backgroundRepeat = "no-repeat";
-            document.getElementById("logo").style.backgroundSize = "65px";
-            document.getElementById("link1").classList.add("links");
-            document.getElementById("link1").classList.remove("links-down");
-            document.getElementById("link2").classList.add("links");
-            document.getElementById("link2").classList.remove("links-down");
-            document.getElementById("link3").classList.add("links");
-            document.getElementById("link3").classList.remove("links-down");
-            document.getElementById("link4").classList.add("links");
-            document.getElementById("link4").classList.remove("links-down");
-            document.getElementById("link5").style.display = "none";
-        }
+    if (currentScroll > lastScrollTop) {
+      document.getElementById('nav-header').classList.add("color-white");
+      document.getElementById('login').style.border="1px solid #333447";
+      document.getElementById('signup').style.display="block";
+      document.getElementById('logo').style.backgroundImage="url(assets/images/logo-pink.png)";
+      for (var i = 0; i < navLink.length; i++) {
+        navLink[i].classList.add("color-blue");
+      }
     }
+    else if(currentScroll<=3){
+        document.getElementById('signup').style.display="none";
+        document.getElementById("nav-header").classList.remove("color-white");
+        document.getElementById('logo').style.backgroundImage="url(assets/images/logo-white.png)";
+        document.getElementById('login').style.border="1px solid #fff";
+        for (var i = 0; i < navLink.length; i++) {
+          navLink[i].classList.remove("color-blue");
+        }
+   }
     lastScrollTop = currentScroll;
 }, false);
 
@@ -45,44 +31,59 @@ document.getElementById("phone-number").addEventListener("click", function () {
     document.getElementById("video").style.top = "0";
 });
 
-function validation() {
-    "use strict";
-    var homeNumber = document.getElementById("phone-number"),
-        homeRegex = /[0-9]{7}/,
+var homeRegex = /[0-9]{7}/,
+    firstChar = /[^a-zá-ú-0-9@.,:/=\s]+([a-zá-ú ]{2,})/,
+    emailRegex = /([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})/;
 
-        name = document.getElementById('name'),
-        city = document.getElementById('city'),
-        firstChar = /[A-Z]{1}[a-z]+/,
+var input=document.getElementsByClassName('sign-up-data');
 
-        email = document.getElementById("email"),
-        emailRegex = /\S+@\S+\.\S+/;
-
-    //Home number validation
-    if (homeRegex.test(homeNumber.value) === false) {
-        document.getElementById("error1").style.display = "inline-block";
-    } else {
-        document.getElementById("error1").style.display = "none";
-    }
-
-    //Name & city validation
-    if (firstChar.test(name.value) === false) {
-        document.getElementById("error2").style.display = "inline-block";
-    } else {
-        document.getElementById("error2").style.display = "none";
-    }
-
-    if (firstChar.test(city.value) === false) {
-        document.getElementById("error4").style.display = "inline-block";
-    } else {
-        document.getElementById("error4").style.display = "none";
-    }
-
-    //Email validation
-    if (emailRegex.test(email.value) === false) {
-        document.getElementById("error3").style.display = "inline-block";
-    } else {
-        document.getElementById("error3").style.display = "none";
-    }
+for (var i = 0; i < input.length; i++) {
+    input[i].addEventListener('blur',validateForm);
 }
 
-document.getElementById("sign-up-btn").addEventListener('click', validation);
+
+function validateForm(){
+  if(input[0].value.trim()==""){
+    input[0].classList.add("alert");
+    return false;
+  }else if(!(homeRegex.test(input[0].value))){
+    input[0].classList.add("alert");
+    return false;
+  }else {
+    input[0].classList.remove("alert");
+  }
+
+  if(input[1].value==""){
+    input[1].classList.add("alert");
+    return false;
+  }else if(!firstChar.test(input[1].value)){
+    input[1].classList.add("alert");
+    return false;
+  }else{
+    input[1].classList.remove("alert");
+  }
+
+  if(input[2].value==""){
+    input[2].classList.add("alert");
+    return false;
+  }else if(!emailRegex.test(input[2].value)){
+    input[2].classList.add("alert");
+    return false;
+  }else{
+    input[2].classList.remove("alert");
+  }
+
+  if(input[3].value==""){
+    input[3].classList.add("alert");
+    return false;
+  }else if(!firstChar.test(input[3].value)){
+    input[3].classList.add("alert");
+    return false;
+  }else{
+    input[3].classList.remove("alert");
+  }
+
+
+}
+
+document.getElementById("sign-up-btn").addEventListener('click', validateForm);
