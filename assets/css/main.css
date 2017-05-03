@@ -8,6 +8,11 @@ body {
     box-sizing: border-box;
 }
 
+.wrapper {
+    width: 100%;
+    height: 3000px;
+}
+
 
 /*
     ===============
@@ -16,13 +21,16 @@ body {
 */
 
 header {
-    position: fixed;
     width: 100%;
     height: 110px;
-    z-index: 5;
+    font-size: 21px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6;
 }
 
-.gradient {    
+.gradient {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0));
 }
 
@@ -36,8 +44,26 @@ nav {
 
 video {
     position: absolute;
-    width: 1349px;
+    width: 100%;
     top: -110px;
+}
+
+.color-blue {
+    color: #333447;
+}
+
+.color-white {
+    background: #fff;
+}
+
+.color-pink {
+    color: #ff00bf;
+    border: 1px solid #ff00bf;
+}
+
+a {
+    cursor: pointer;
+    color: #fff;
 }
 
 #logo {
@@ -49,63 +75,54 @@ video {
     width: 65px;
 }
 
-.links-container {
-    margin: 10px 90px 0 0;
+.menu {
+    float: right;
+    margin: 10px 70px 0 0;
 }
 
-.links {
-    font-size: 19px;
-    color: #fff;
+.nav-link {
     text-decoration: none;
     margin-right: 45px;
+    font-weight: 300;
 }
 
-.links:hover {
+.nav-link:hover {
     color: #df06ac;
 }
 
-.links:nth-child(2) {
+.nav-link:nth-child(2) {
     margin-right: 15px;
 }
 
-.links:nth-child(4) {
+.nav-link:nth-child(4) {
     border-radius: 8px;
     border: 1px solid #fff;
     margin: 0;
     padding: 10px 15px;
 }
 
-.links:nth-child(4):hover {
+.nav-link:nth-child(4):hover {
+    background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
 }
 
-.header-white {
-    background-color: #fff;
-}
-
 .links-down {
-    font-size: 19px;
-    color: #737481;
+    font-weight: 300;
+    color: #333447;
     text-decoration: none;
-    margin-right: 45px;
-}
-
-.links-down:hover {
-    color: #df06ac;
-}
-
-.links-down:nth-child(2) {
-    margin-right: 15px;
-}
-
-.links-down:nth-child(4) {
     border-radius: 8px;
     border: 1px solid #eeeff4;
     margin: 0;
     padding: 10px 15px;
 }
 
-#link5 {
+.links-down:hover {
+    color: #df06ac;
+    text-decoration: none;
+}
+
+#signup {
+    font-weight: 300;
     color: #ff00bf;
     text-decoration: none;
     border-radius: 8px;
@@ -113,8 +130,8 @@ video {
     display: none;
     position: absolute;
     top: 0;
-    right: -30px;
-    padding: 11px 15px;
+    right: -60px;
+    padding: 10px 10px;
 }
 
 
@@ -126,9 +143,10 @@ video {
 
 .form {
     background-color: #fff;
+    float: right;
     width: 560px;
     padding: 55px;
-    z-index: 1;
+    z-index: 5;
 }
 
 .form h1 {
@@ -146,6 +164,7 @@ video {
 }
 
 .sign-up {
+    position: relative;
     margin-top: 18px;
 }
 
@@ -202,31 +221,13 @@ video {
 }
 
 .alert {
-    background-image: url(../images/error.png);
+    background-image: url("../images/error.png");
     background-repeat: no-repeat;
     background-size: 25px;
-    width: 25px;
-    height: 25px;
-    display: inline-block;
-    display: none;
-    position: absolute;
-    right: 0;
-}
-
-.phone-alert {
-    top: -2px;
-}
-
-.name-alert {
-    top: 63px;
-}
-
-.email-alert {
-    top: 128px;
-}
-
-.city-alert {
-    top: 193px;
+    border-bottom-color: red;
+    background-position: right;
+    /*display: inline-block;*/
+    /*display: none;*/
 }
 
 
@@ -240,7 +241,7 @@ video {
     clear: both;
     background-image: linear-gradient(#681b81, #2c1e66);
     color: #fff;
-    box-shadow: 0 0 100px 60px #681b81;
+    box-shadow: 0 0 100px 50px #681b81;
     height: 650px;
     padding: 50px 160px;
     margin: 0;
@@ -250,6 +251,7 @@ video {
     display: block;
     width: 450px;
     margin: 0;
+    float: left;
 }
 
 .info div {
@@ -274,6 +276,7 @@ video {
 }
 
 .main-content img {
+    float: right;
     height: 500px;
 }
 
@@ -285,10 +288,8 @@ video {
 */
 
 .watch-content {
-    clear: both;
     background-color: #fff;
     height: 480px;
-    z-index: 4;
 }
 
 .content {
@@ -356,6 +357,7 @@ footer a:hover {
 }
 
 .footer-main {
+    float: left;
     width: 750px;
     margin: 10px 0 60px 100px;
 }
@@ -384,6 +386,7 @@ footer a:hover {
 }
 
 .download {
+    float: right;
     margin-right: 200px;
 }
 

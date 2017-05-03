@@ -1,41 +1,32 @@
-/*global window, document*/
-
-var lastScrollTop = 0;
+/*global document, window, document, validateForm*/
+var navLink = document.getElementsByClassName('nav-link');
+var lastScrollTop = 0,
+    i;
 
 window.addEventListener("scroll", function () {
     "use strict";
     var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
     if (currentScroll > 70) {
-        document.getElementById("logo").style.backgroundImage = "url(assets/images/logo-pink.png)";
-        document.getElementById("logo").style.backgroundRepeat = "no-repeat";
-        document.getElementById("logo").style.backgroundSize = "65px";
-        document.getElementById("nav-header").classList.add("header-white");
+        document.getElementById('nav-header').classList.add("color-white");
         document.getElementById("nav-header").classList.remove("gradient");
-        document.getElementById("link1").classList.remove("links");
-        document.getElementById("link1").classList.add("links-down");
-        document.getElementById("link2").classList.remove("links");
-        document.getElementById("link2").classList.add("links-down");
-        document.getElementById("link3").classList.remove("links");
-        document.getElementById("link3").classList.add("links-down");
-        document.getElementById("link4").classList.remove("links");
-        document.getElementById("link4").classList.add("links-down");
-        document.getElementById("link5").style.display = "inline-block";
-    } else {
-        if (currentScroll <= 100) {
-            document.getElementById("nav-header").classList.remove("header-white");
-            document.getElementById("nav-header").classList.add("gradient");
-            document.getElementById("logo").style.backgroundImage = "url(assets/images/logo-white.png)";
-            document.getElementById("logo").style.backgroundRepeat = "no-repeat";
-            document.getElementById("logo").style.backgroundSize = "65px";
-            document.getElementById("link1").classList.add("links");
-            document.getElementById("link1").classList.remove("links-down");
-            document.getElementById("link2").classList.add("links");
-            document.getElementById("link2").classList.remove("links-down");
-            document.getElementById("link3").classList.add("links");
-            document.getElementById("link3").classList.remove("links-down");
-            document.getElementById("link4").classList.add("links");
-            document.getElementById("link4").classList.remove("links-down");
-            document.getElementById("link5").style.display = "none";
+        document.getElementById('logo').style.backgroundImage = "url(assets/images/logo-pink.png)";
+        document.getElementById("login").classList.remove("nav-link");
+        document.getElementById("login").classList.add("links-down");
+        document.getElementById('signup').style.display = "inline-block";
+        
+        for (i = 0; i < navLink.length; i += 1) {
+            navLink[i].classList.add("color-blue");
+        }
+    } else if (currentScroll <= 100) {
+        document.getElementById("nav-header").classList.remove("color-white");
+        document.getElementById("nav-header").classList.add("gradient");
+        document.getElementById('logo').style.backgroundImage = "url(assets/images/logo-white.png)";
+        document.getElementById("login").classList.add("nav-link");
+        document.getElementById("login").classList.remove("links-down");
+        document.getElementById('signup').style.display = "none";
+        
+        for (i = 0; i < navLink.length; i += 1) {
+            navLink[i].classList.remove("color-blue");
         }
     }
     lastScrollTop = currentScroll;
@@ -47,44 +38,46 @@ document.getElementById("phone-number").addEventListener("click", function () {
     document.getElementById("video").style.top = "0";
 });
 
-function validation() {
-    "use strict";
-    var homeNumber = document.getElementById("phone-number"),
-        homeRegex = /[0-9]{7}/,
+var arrayRegex = [{
+        regex: /[0-9]{7}/,
+        title: "Debe ingresar 6 o 7 digitos"
+    }, {
+        regex: /[\^\a-zá-ú-0-9@.,:\/\=\s]+([a-zá-ú ]{2,})/,
+        title: "La primera letra debe ser mayuscula"
+    }, {
+        regex: /([\^\@\s]+)@((?:[\-\a-z0-9]+\.)+[a-z]{2,})/,
+        title: "Ex: example@email.com"
+    }, {
+        regex: /[\^\a-zá-ú-0-9@.,:\/\=\s]+([a-zá-ú ]{2,})/,
+        title: "La primera letra debe ser mayuscula"
+    }];
 
-        name = document.getElementById('name'),
-        city = document.getElementById('city'),
-        firstChar = /[A-Z]{1}[a-z]+/,
+var input = document.getElementsByClassName('sign-up-data');
 
-        email = document.getElementById("email"),
-        emailRegex = /\S+@\S+\.\S+/;
-
-    //Home number validation
-    if (homeRegex.test(homeNumber.value) === false) {
-        document.getElementById("error1").style.display = "inline-block";
-    } else {
-        document.getElementById("error1").style.display = "none";
-    }
-
-    //Name & city validation
-    if (firstChar.test(name.value) === false) {
-        document.getElementById("error2").style.display = "inline-block";
-    } else {
-        document.getElementById("error2").style.display = "none";
-    }
-
-    if (firstChar.test(city.value) === false) {
-        document.getElementById("error4").style.display = "inline-block";
-    } else {
-        document.getElementById("error4").style.display = "none";
-    }
-
-    //Email validation
-    if (emailRegex.test(email.value) === false) {
-        document.getElementById("error3").style.display = "inline-block";
-    } else {
-        document.getElementById("error3").style.display = "none";
-    }
+for (i = 0; i < input.length; i += 1) {
+    input[i].addEventListener('blur', validateForm);
 }
 
-document.getElementById("sign-up-btn").addEventListener('click', validation);
+arrayRegex.forEach(function (e, i) {
+    "use strict";
+    input[i].setAttribute("title", e.title);
+});
+
+function validateForm() {
+    "use strict";
+    arrayRegex.forEach(function (e, i) {
+        if (input[i].value.trim() === "") {
+            input[i].classList.add("alert");
+            return false;
+        }
+        
+        if (!(e.regex.test(input[i].value))) {
+            input[i].classList.add("alert");
+            return false;
+        } else {
+            input[i].classList.remove("alert");
+        }
+    });
+}
+
+document.getElementById("sign-up-btn").addEventListener('click', validateForm);
