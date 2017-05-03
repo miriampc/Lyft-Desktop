@@ -13,7 +13,7 @@ window.addEventListener("scroll", function () {
         document.getElementById("login").classList.remove("nav-link");
         document.getElementById("login").classList.add("links-down");
         document.getElementById('signup').style.display = "inline-block";
-        
+
         for (i = 0; i < navLink.length; i += 1) {
             navLink[i].classList.add("color-blue");
         }
@@ -24,7 +24,7 @@ window.addEventListener("scroll", function () {
         document.getElementById("login").classList.add("nav-link");
         document.getElementById("login").classList.remove("links-down");
         document.getElementById('signup').style.display = "none";
-        
+
         for (i = 0; i < navLink.length; i += 1) {
             navLink[i].classList.remove("color-blue");
         }
@@ -69,9 +69,7 @@ function validateForm() {
         if (input[i].value.trim() === "") {
             input[i].classList.add("alert");
             return false;
-        }
-        
-        if (!(e.regex.test(input[i].value))) {
+        }else if (!(e.regex.test(input[i].value))) {
             input[i].classList.add("alert");
             return false;
         } else {
