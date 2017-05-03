@@ -15,4 +15,10 @@ Proyecto final | Sprint 3
 4. Enlazar los videos correspondientes de YouTube.
 5. Incluir links, imágenes e íconos respectivos en el footer.
 
+## Invictus Team
+
+<a href="https://github.com/itsandromeda"><img src="https://s-media-cache-ak0.pinimg.com/564x/fb/13/a5/fb13a5993e465a069ec453e56e560797.jpg" alt="Annia J. Flores" height="150"></a> | <a href="https://github.com/Fiorellacr24"><img src="https://avatars1.githubusercontent.com/u/16074179?v=3&s=150" alt="Fiorella Cisneros" height="150"></a> | <a href="https://github.com/miriampc"><img src="https://avatars3.githubusercontent.com/u/25912580?v=3&s=460" alt="Miriam Peralta" height="150"></a> | <a href="https://github.com/RosarioFelix"><img src="https://avatars0.githubusercontent.com/u/25912563?v=3&s=460" alt="Rosario Félix" height="150"></a> 
+|---|---|---|---|
+[Annia J. Flores](https://github.com/itsandromeda) | [Fiorella Cisneros](https://github.com/Fiorellacr24) | [Miriam Peralta](https://github.com/miriampc) | [Rosario Félix](https://github.com/RosarioFelix)
+
 Mira cómo quedó haciendo click [aquí](https://itsandromeda.github.io/Lyft-Desktop/).
