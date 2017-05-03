@@ -46,6 +46,10 @@ for (var i = 0; i < input.length; i++) {
     input[i].addEventListener('blur',validateForm);
 }
 
+arrayRegex.forEach(function(e,i){
+  input[i].setAttribute("title",e.title);
+})
+
 function validateForm(){
   arrayRegex.forEach(function(e,i){
     if(input[i].value.trim()==""){
